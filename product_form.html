@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Registration</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Product Hub</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="products.html">Produtos</a></li>
+            <li><a href="product_form.html">Cadastrar</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <h1>Product Registration Form</h1>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="">Select a category</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="books">Books</option>
+                    <option value="home">Home & Garden</option>
+                    <option value="sports">Sports</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" step="0.01" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity in Stock:</label>
+                <input type="number" id="quantity" name="quantity" min="0" required>
+            </div>
+            <button type="submit">Register Product</button>
+        </form>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html></content>
