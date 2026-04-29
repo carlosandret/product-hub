@@ -1,5 +1,5 @@
 import { db } from "./app.js";
-import { ref, push, onValue } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-database.js";
+import { ref, push} from "https://www.gstatic.com/firebasejs/12.12.1/firebase-database.js";
 
 var nameInput = document.getElementById('nameInput');
 var descriptionInput = document.getElementById('descriptionInput');
@@ -7,8 +7,6 @@ var categorySelect = document.getElementById('categorySelect');
 var priceInput = document.getElementById('priceInput');
 var quantityInput = document.getElementById('quantityInput');
 var addButton = document.getElementById('addButton');
-
-console.log("categorySelect =", categorySelect);
 
 const productsListRef = ref(db, "products")
 

@@ -9,6 +9,29 @@ body {
     height: 100vh;
 }
 
+body.products-page {
+    display: block;
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+.products-page .h1-products {
+    text-align: center;
+    margin: 20px 20px 50px;
+}
+
+.products-page .titleProducts {
+    font-size: 2rem;
+    color: #333;
+    margin: 0;
+}
+
+.products-page .container {
+    max-width: 1000px;
+    margin: 20px auto;
+    width: auto;
+}
+
 .container {
     background-color: white;
     margin-top: 100px;
@@ -19,7 +42,7 @@ body {
     max-width: 500px;
 }
 
-h1 {
+.home h1 {
     text-align: center;
     color: #333;
 }
@@ -107,6 +130,4 @@ body {
   padding: 8px 14px;
   border-radius: 6px;
   background-color: white;
-
-
 }

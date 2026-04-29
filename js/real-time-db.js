@@ -1,17 +1,24 @@
 import { db } from "./app.js";
 import { ref, onValue } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-database.js";
 
-var productsList = document.getElementById('productsList');
-const productsListRef = ref(db, "products");
+var productsBody = document.getElementById('productsBody');
+const productsBodyRef = ref(db, "products");
 
 
-onValue(productsListRef, (snapshot) => {
-    productsList.innerHTML = "";
+onValue(productsBodyRef, (snapshot) => {
+    productsBody.innerHTML = "";
 
     snapshot.forEach((item) => {
-        const li = document.createElement("li");
+        const tr = document.createElement("tr");
         const data = item.val();
-        li.textContent = data.name + " | " + data.description + " | " + data.category + " | " + data.price + "|" + data.quantity + "|";
-        productsList.appendChild(li);
+
+        tr.innerHTML = `
+            <td>${data.name}</td>
+            <td>${data.description}</td>
+            <td>${data.category}</td>
+            <td>${data.price}</td>
+            <td>${data.quantity}</td>
+        `;
+        productsBody.appendChild(tr);
     });
 });
