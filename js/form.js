@@ -7,18 +7,31 @@ var categorySelect = document.getElementById('categorySelect');
 var priceInput = document.getElementById('priceInput');
 var quantityInput = document.getElementById('quantityInput');
 var addButton = document.getElementById('addButton');
+const successMessage = document.getElementById('successMessage');
+const form = document.getElementById('productForm');
 
 const productsListRef = ref(db, "products")
 
 // Ao clicar no botão:
 addButton.addEventListener("click", () => {
+    if (!validateForm()) {
+        alert("Preencha todos os campos antes de salvar.");
+        return;
+    }
     create(
         nameInput.value, 
         descriptionInput.value, 
         categorySelect.value, 
         priceInput.value,
         quantityInput.value
-    )});
+    );
+    successMessage.style.display = "block";
+    setTimeout( () => {
+        successMessage.style.display = "none"
+    }, 3000);
+
+    form.reset();
+});
 
 function create(name, description, category, price, quantity) {
     var data = {
@@ -30,3 +43,16 @@ function create(name, description, category, price, quantity) {
     }
     return push(ref(db, "products"), data);
 };
+
+function validateForm() {
+    if (
+        nameInput.value.trim() === "" ||
+        descriptionInput.value.trim() === "" ||
+        categorySelect.value.trim() === "" ||
+        priceInput.value.trim() === "" ||
+        quantityInput.value.trim() === ""
+    ) {
+        return false;
+    }
+    return true;
+}

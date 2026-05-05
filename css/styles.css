@@ -9,6 +9,8 @@ body {
     height: 100vh;
 }
 
+/* Products page */
+
 body.products-page {
     display: block;
     min-height: 100vh;
@@ -61,7 +63,14 @@ body.products-page {
 .home h1 {
     text-align: center;
     color: #333;
+    font-size: 50px;
 }
+.home p {
+    text-align: center;
+    font-size: 20px;
+}
+
+/* Form page */
 
 .form-group {
     margin-bottom: 15px;
@@ -141,11 +150,55 @@ body {
   color: #ecf0f1;
   font-size: 16px;
   transition: 0.3s ease;
-  padding: 8px 14px; /* padding fixo — não cria efeito de expansão */
+  padding: 8px 14px; 
   border-radius: 6px;
 }
 
 .nav-links a:hover {
-  background-color: white; /* leve destaque no hover */
+  background-color: white; 
   color: black;
+}
+
+/* registered product message */
+.success-message {
+    background-color: #1abc9c;  /* cor de sucesso */
+    color: white;
+    padding: 12px 18px;
+    margin: 20px 0;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    width: fit-content;
+    animation: fadeIn 0.4s ease;
+    box-shadow: 0px 2px 6px #0003;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.view-products-link {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+    
+    text-decoration: none;
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.view-products-link:hover {
+    background-color: #2c81ba;
+    transform: translateY(-2px);
+}
+
+.view-products-link:active {
+    background-color: #1f5f87;
+    transform: translateY(0);
 }
