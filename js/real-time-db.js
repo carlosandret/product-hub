@@ -8,11 +8,13 @@ const productsBodyRef = ref(db, "products");
 onValue(productsBodyRef, (snapshot) => {
     productsBody.innerHTML = "";
 
+    count = 0
     snapshot.forEach((item) => {
         const tr = document.createElement("tr");
         const data = item.val();
-
+        count += 1 
         tr.innerHTML = `
+            <td>${count}</td>
             <td>${data.name}</td>
             <td>${data.description}</td>
             <td>${data.category}</td>
