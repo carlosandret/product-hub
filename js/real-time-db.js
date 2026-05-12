@@ -1,14 +1,13 @@
 import { db } from "./app.js";
-import { ref, onValue } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-database.js";
+import { ref, onValue, set} from "https://www.gstatic.com/firebasejs/11.0.0/firebase-database.js";
 
 var productsBody = document.getElementById('productsBody');
 const productsBodyRef = ref(db, "products");
-
+var deleteButton = document.getElementById('deleteButton');
 
 onValue(productsBodyRef, (snapshot) => {
     productsBody.innerHTML = "";
-
-    count = 0
+    let count = 0
     snapshot.forEach((item) => {
         const tr = document.createElement("tr");
         const data = item.val();
@@ -24,3 +23,12 @@ onValue(productsBodyRef, (snapshot) => {
         productsBody.appendChild(tr);
     });
 });
+
+deleteButton.addEventListener("click", () => {
+    deleteProducts(productsBodyRef)
+});
+
+function deleteProducts(refDB) {
+    set(refDB, {})
+    console.log("\nAll products have been deleted!")
+};
